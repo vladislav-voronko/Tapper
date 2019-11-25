@@ -35,7 +35,7 @@ namespace MathData
         public static List<string> BinToGraph(string data)
         {
             int graphHeight = 17;
-            int graphWidth = 106;
+            int graphWidth = 73; // Переменной должна быть! Если есть вопросы как должна выщитываться, то говори, помогу с этим.
             List<string> binColumn = new List<string>();
             for (var i = 0; i < graphWidth; i++)
             {
