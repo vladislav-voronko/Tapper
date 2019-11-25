@@ -28,32 +28,29 @@ namespace Tapper
             DrawGraph(Canvas1, BinToGraph(DecToBin(hella)));
             //PutNewPointInCanvas(Canvas1, 10, 10);
         }
-        private void PutNewPointInCanvas(Canvas canvas, int x, int y, int color)
+        private void PutNewPointInCanvas(Canvas canvas, int x, int y, Brush color)
         {
-            var myPolygon = new Polygon();
-            myPolygon.StrokeThickness = 5;
-            if (color == 1) 
-            myPolygon.Stroke = System.Windows.Media.Brushes.Black;
-            else
-                myPolygon.Stroke = System.Windows.Media.Brushes.White;
-            myPolygon.Points = new PointCollection { new Point(x, y), new Point(x, y) };
+            var myPolygon = new Polygon
+            {
+                StrokeThickness = 5,
+                Stroke = color,
+                Points = new PointCollection {new Point(x, y), new Point(x, y)}
+            };
             canvas.Children.Add(myPolygon);
         }
         public void DrawGraph(Canvas canvas, List<string> data)
         {
             char[] divData;
-            int color1;
             int xParam = 0;
             int yParam = 0;
-            for(var i = 0; i < data.Count; i++)
+            for (var i = 0; i < data.Count; i++)
             {
                 divData = data[i].ToCharArray(0, 17);
-                for(var j = 16; j >= 0; j--)
+                for (var j = 16; j >= 0; j--)
                 {
                     if (divData[j] == '1')
-                        color1 = 1;
-                    else color1 = 0;
-                    PutNewPointInCanvas(Canvas1, xParam, yParam, color1);
+                        PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Black);
+                    else PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.White);
                     yParam += 6;
                 }
                 xParam += 6;
