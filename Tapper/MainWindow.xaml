@@ -5,18 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tapper"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="100*"/>
-            <RowDefinition Height="219*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="TestBox1" Width="300" Height="30" Grid.Row="0" Margin="246,10"></TextBox>
-        <Button x:Name="Button1" Width="100" Height="50" Click="Button1_Click" Grid.Row="1" Content="Click" Margin="346,2,346,97.984" Grid.RowSpan="2"></Button>
-        <Canvas x:Name="Canvas1" Height="200" Width="650" Margin="50,150,0,0">
-            
-        </Canvas>
+        <StackPanel Orientation="Vertical" Grid.Row="0">
+            <TextBox x:Name="TestBox1" TextWrapping="Wrap" Margin="5" BorderBrush="Black" BorderThickness="1"/>
+            <TextBox x:Name="TestBox2" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" IsReadOnly="True" Opacity="0.6"/>
+        </StackPanel>
+        <Button Grid.Row="1" x:Name="Button1" Width="100" Click="Button1_Click" Content="Click" Margin="5"></Button>
+        <Canvas Grid.Row="2" x:Name="Canvas1" Background="Bisque"/>
     </Grid>
 </Window>
