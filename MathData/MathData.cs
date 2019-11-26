@@ -29,13 +29,19 @@ namespace MathData
                 result = result + binArray[i];
             }
 
+            if (result.Length != 1802)
+            {
+                int counter = result.Length;
+                for (var i = 0; i < 1802 - counter; i++)
+                result = result.Insert(0, "0");
+            }
             return result;
         }
-
+        
         public static List<string> BinToGraph(string data)
         {
             int graphHeight = 17;
-            int graphWidth = 73; // Переменной должна быть! Если есть вопросы как должна выщитываться, то говори, помогу с этим.
+            int graphWidth = 106; // Переменной должна быть! Если есть вопросы как должна выщитываться, то говори, помогу с этим.
             List<string> binColumn = new List<string>();
             for (var i = 0; i < graphWidth; i++)
             {
