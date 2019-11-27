@@ -16,6 +16,12 @@
             <TextBox x:Name="TestBox1" TextWrapping="Wrap" Margin="5" BorderBrush="Black" BorderThickness="1"/>
             <TextBox x:Name="TestBox2" TextWrapping="Wrap" BorderBrush="Black" BorderThickness="1" IsReadOnly="True" Opacity="0.6"/>
         </StackPanel>
+        <ComboBox Grid.Row="1" x:Name="ComboBox1" Width="75" Height="20" HorizontalAlignment="Left" SelectedIndex="0">
+            <TextBlock>Black</TextBlock>
+            <TextBlock>Red</TextBlock>
+            <TextBlock>Green</TextBlock>
+            <TextBlock>Blue</TextBlock>
+        </ComboBox>
         <Button Grid.Row="1" x:Name="Button1" Width="100" Click="Button1_Click" Content="Click" Margin="5"></Button>
         <Canvas Grid.Row="2" x:Name="Canvas1" Background="Bisque"/>
     </Grid>

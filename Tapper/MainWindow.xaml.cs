@@ -37,7 +37,7 @@ namespace Tapper
             {
                 StrokeThickness = 5,
                 Stroke = color,
-                Points = new PointCollection {new Point(x, y), new Point(x, y)}
+                Points = new PointCollection { new Point(x, y), new Point(x, y) }
             };
             canvas.Children.Add(myPolygon);
         }
@@ -52,7 +52,25 @@ namespace Tapper
                 for (var j = 16; j >= 0; j--)
                 {
                     if (divData[j] == '1')
-                        PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Black);
+                    {
+                        var activeColor = ComboBox1.SelectedIndex;
+                        switch (activeColor)
+                        {
+                            case 0:
+                                PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Black);
+                                break;
+                            case 1:
+                                PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Red);
+                                break;
+                            case 2:
+                                PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Green);
+                                break;
+                            case 3:
+                                PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Blue);
+                                break;
+                        }
+                       // PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.Black);
+                    }
                     else PutNewPointInCanvas(Canvas1, xParam, yParam, Brushes.White);
                     yParam += 6;
                 }
